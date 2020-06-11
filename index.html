@@ -16,30 +16,36 @@
       </nav>
 
     <div class="container clearfix">
-        <div class="bg-info rounded shadow p-3 mb-5">
-            <h1 class="text-center border-bottom">Question #</h1>
+        <div id="startBlock" class="bg-info rounded shadow p-3 mb-5">
+          <h1 class="text-center border-bottom">Instructions</h1>
+          <p>The following app as a quiz regarding the motorsport Formula 1 and is built with JavaScript. Once you hit the "Start" button, you will have 3 minutes to answer 10 questions.
+            Your remaining time will have 10 seconds deducted for every incorrect answer. Good luck!
+          </p>
+          <button id="startButton" type="button" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Start</button>
+        </div>
+
+        <div id="quesBlock" class="bg-info rounded shadow p-3 mb-5 invisible">
+            <h1 class="text-center border-bottom">Question</h1>
 
             <div class="row">
                 <div class="col">
-                <h5>Time Remaining</h5>
+                <h5 id="timeDisplay">BEGIN!</h5>
                 </div>
             </div>
-
-            <h3 class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, adipisci fuga cupiditate laborum molestias corrupti quas 
+            <!-- QUESTION BODY -->
+            <h3 id="questionBody" class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, adipisci fuga cupiditate laborum molestias corrupti quas 
                 harum rem aliquid, 
                 inventore corporis. Quis velit magnam ut necessitatibus nostrum harum esse consequuntur?
             </h3>
+            <!-- ANSWER OPTIONS BUTTONS-->
             <div class="text-center container">
                 <div class="row">
-                    <button type="button" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Option 1</button>
-                    <button type="button" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Option 2</button>
-                    <button type="button" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Option 3</button>
-                    <button type="button" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Option 4</button>
+                    <button id="firstOption" type="button" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Option 1</button>
+                    <button id="secondOption" type="button" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Option 2</button>
+                    <button id="thirdOption" type="button" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Option 3</button>
+                    <button id="fourthOption" type="button" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Option 4</button>
                 </div>
-                <div class="row">
-                    <button type="button" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Aux 1</button>
-                    <button type="button" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Aux 2</button>
-                </div>
+                  <button id="nextButton" type="button" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Next</button>
             </div>
         </div>
     </div>
@@ -56,6 +62,6 @@
         </div>
     </div>
 
-<script scr="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
