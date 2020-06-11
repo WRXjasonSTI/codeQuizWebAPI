@@ -1,72 +1,7 @@
 var userScore = 0;
 
-// Start Button Functionality
-var startButton = document.getElementById("startButton");
-startButton.addEventListener('click', startGame);
-startButton.addEventListener('click', setTime);
-var questionBody = document.getElementById("questionBody");
-
-function startGame() {
-    var startBlock = document.getElementById("startBlock");
-    // startBlock.classList.add("invisible")
-    startBlock.remove();
-
-    var quesBlock = document.getElementById("quesBlock");
-    quesBlock.classList.remove("invisible");
-    setNextQuestion();    
-}
-
-// Next Question Button Functionality
-var nextButton = document.getElementById("nextButton");
-
-nextButton.addEventListener('click', nextQuestion);
-
-function setNextQuestion() {
-
-}
-
-// Quiz Options and Answer Select functionality
-var firstOption = document.getElementById("firstOption");
-var secondOption = document.getElementById("secondOption");
-var thirdOption = document.getElementById("thirdOption");
-var fourthOption = document.getElementById("fourthOption");
-
-function chooseAnswer () {
-
-}
-
-
-// Timer functionality and display
-var timeEl = document.querySelector("timeDisplay");
-// var secondsLeft = 0;
-
-function setTime() {
-    secondsLeft = 180;
-    var timerInterval = setInterval(function() {
-        secondsLeft--;
-        timeDisplay.textContent = secondsLeft + " seconds remaining.";
-
-        if(secondsLeft === 0) {
-        clearInterval(timerInterval);
-        sendMessage();
-        }
-    }, 1000);
-}
-
-
-// GAME OVER when timer hits 0 or 10 questions answered
-
-function sendMessage() {
-    timeDisplay.textContent = " ";
-  
-    var imgEl = document.createElement("img");
-  
-    imgEl.setAttribute("src", "./Assets/spagett.PNG");
-    quesBlock.appendChild(imgEl);
-  
-  }
-
 // Questions in the form of an array of objects of elements of properties
+// CONTROL SHIFT [ OR ]
 var questions = [
     {
       question: 'With which team did Sebastian Vettel win his Fourth Formula 1 world title?',
@@ -159,3 +94,122 @@ var questions = [
         ]
       }
 ]
+
+// Start Button Functionality
+var startButton = document.getElementById("startButton");
+startButton.addEventListener('click', startGame);
+startButton.addEventListener('click', setTime);
+var questionBody = document.getElementById("questionBody");
+
+function startGame() {
+    var startBlock = document.getElementById("startBlock");
+    // startBlock.classList.add("invisible")
+    homeLink.innerText = "Reset"
+    startBlock.remove();
+
+    var quesBlock = document.getElementById("quesBlock");
+    quesBlock.classList.remove("invisible");
+    // setNextQuestion();    
+    fillQuestion();
+}
+
+// Timer functionality and display
+var timeEl = document.querySelector("timeDisplay");
+
+function setTime() {
+    secondsLeft = 210;
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timeDisplay.textContent = secondsLeft + " seconds remaining.";
+
+        if(secondsLeft === 0) {
+        clearInterval(timerInterval);
+        sendMessage();
+        }
+    }, 1000);
+}
+
+// Question Population
+var nextButton = document.getElementById("nextButton");
+nextButton.addEventListener('click', fillQuestion);
+
+var iHateCoding;
+iHateCoding = 0;
+
+function fillQuestion(question) {
+
+    if (iHateCoding < questions.length) {
+        questionBody.innerText = questions[iHateCoding].question
+
+        firstOption.innerText = questions[iHateCoding].answers[0].text
+        secondOption.innerText = questions[iHateCoding].answers[1].text
+        thirdOption.innerText = questions[iHateCoding].answers[2].text
+        fourthOption.innerText = questions[iHateCoding].answers[3].text
+    
+        iHateCoding++;   
+    }
+  }
+
+// Quiz Options and Answer Select functionality
+var firstOption = document.getElementById("firstOption");
+var secondOption = document.getElementById("secondOption");
+var thirdOption = document.getElementById("thirdOption");
+var fourthOption = document.getElementById("fourthOption");
+
+firstOption.addEventListener('click', answer1Check);
+secondOption.addEventListener('click', answer2Check);
+thirdOption.addEventListener('click', answer3Check);
+fourthOption.addEventListener('click', answer4Check);
+
+function answer1Check() {
+    if (questions[iHateCoding].answers[0].correct === true ) {
+        console.log("test correct")
+      } else {
+        console.log("test wrong")
+      }
+    fillQuestion();
+}
+
+function answer2Check() {
+    if (questions[iHateCoding].answers[1].correct === true ) {
+        console.log("test correct")
+      } else {
+        console.log("test wrong")
+      }
+    fillQuestion();
+}
+
+function answer3Check() {
+    if (questions[iHateCoding].answers[2].correct === true ) {
+        console.log("test correct")
+      } else {
+        console.log("test wrong")
+      }
+    fillQuestion();
+}
+
+function answer4Check() {
+    if (questions[iHateCoding].answers[3].correct === true ) {
+        console.log("test correct")
+      } else {
+        console.log("test wrong")
+      }
+    fillQuestion();
+}
+
+
+
+// GAME OVER when timer hits 0 or 10 questions answered
+
+function sendMessage() {
+    timeDisplay.textContent = " ";
+  
+    var imgEl = document.createElement("img");
+  
+    imgEl.setAttribute("src", "./Assets/spagett.PNG");
+    quesBlock.appendChild(imgEl);
+  
+  }
+
+
+
