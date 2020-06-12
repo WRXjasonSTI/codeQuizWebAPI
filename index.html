@@ -17,11 +17,12 @@
 
     <div class="container clearfix">
         <div id="startBlock" class="bg-info rounded shadow p-3 mb-5">
-          <h1 class="text-center border-bottom">Instructions</h1>
+          <h1 class="text-center border-bottom">Formula 1 Quiz Instructions</h1>
           <p>The following app as a quiz regarding the motorsport Formula 1 and is built with JavaScript. Once you hit the "Start" button, you will have 3.5 minutes to answer 10 questions.
             Your remaining time will have 10 seconds deducted for every incorrect answer. Good luck!
           </p>
-          <button id="startButton" type="button" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Start</button>
+          <button id="startButton" type="button" class="col btn btn-success shadow-sm p-3 mb-5 border border-warning rounded">Start</button>
+          <img src="./Assets/lewisAndSeb.jpg" alt="f1Drivers" class="img-fluid" >
         </div>
 
         <div id="quesBlock" class="bg-info rounded shadow p-3 mb-5 invisible">
@@ -31,16 +32,19 @@
                 <div class="col">
                 <h5 id="timeDisplay">BEGIN!</h5>
                 </div>
+                <div class="col">
+                <h5 id="scoreDisplay">Questions Answered</h5>
+                </div>
             </div>
             <!-- QUESTION BODY -->
             <h3 id="questionBody" class="text-center">Placeholder for Question</h3>
             <!-- ANSWER OPTIONS BUTTONS-->
-            <div class="text-center container">
+            <div id="buttonsGroup" class="text-center container">
                 <div class="row">
-                    <button id="firstOption" type="button" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Option 1</button>
-                    <button id="secondOption" type="button" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Option 2</button>
-                    <button id="thirdOption" type="button" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Option 3</button>
-                    <button id="fourthOption" type="button" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Option 4</button>
+                    <button id="firstOption" type="button" value="1" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Option 1</button>
+                    <button id="secondOption" type="button" value="2" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Option 2</button>
+                    <button id="thirdOption" type="button" value="3" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Option 3</button>
+                    <button id="fourthOption" type="button" value="4" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Option 4</button>
                 </div>
                   <button id="nextButton" type="button" class="col btn btn-secondary shadow-sm p-3 mb-5 border border-warning rounded">Pass</button>
             </div>

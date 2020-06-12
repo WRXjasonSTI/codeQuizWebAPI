@@ -117,7 +117,7 @@ function startGame() {
 var timeEl = document.querySelector("timeDisplay");
 
 function setTime() {
-    secondsLeft = 210;
+    secondsLeft = 5;
     var timerInterval = setInterval(function() {
         secondsLeft--;
         timeDisplay.textContent = secondsLeft + " seconds remaining.";
@@ -162,37 +162,37 @@ thirdOption.addEventListener('click', answer3Check);
 fourthOption.addEventListener('click', answer4Check);
 
 function answer1Check() {
-    if (questions[iHateCoding].answers[0].correct === true ) {
-        console.log("test correct")
+    if (questions[iHateCoding].answers[0].correct) {
+        console.log("test correct1")
       } else {
-        console.log("test wrong")
+        console.log("test wrong1")
       }
     fillQuestion();
 }
 
 function answer2Check() {
-    if (questions[iHateCoding].answers[1].correct === true ) {
-        console.log("test correct")
+    if (questions[iHateCoding].answers[1].correct) {
+        console.log("test correct2")
       } else {
-        console.log("test wrong")
+        console.log("test wrong2")
       }
     fillQuestion();
 }
 
 function answer3Check() {
-    if (questions[iHateCoding].answers[2].correct === true ) {
-        console.log("test correct")
+    if (questions[iHateCoding].answers[2].correct) {
+        console.log("test correct3")
       } else {
-        console.log("test wrong")
+        console.log("test wrong3")
       }
     fillQuestion();
 }
 
 function answer4Check() {
-    if (questions[iHateCoding].answers[3].correct === true ) {
-        console.log("test correct")
+    if (questions[iHateCoding].answers[3].correct) {
+        console.log("test correct4")
       } else {
-        console.log("test wrong")
+        console.log("test wrong4")
       }
     fillQuestion();
 }
@@ -202,13 +202,13 @@ function answer4Check() {
 // GAME OVER when timer hits 0 or 10 questions answered
 
 function sendMessage() {
-    timeDisplay.textContent = " ";
-  
-    var imgEl = document.createElement("img");
-  
+    var buttonsGroup = document.getElementById("buttonsGroup");
+    buttonsGroup.remove();
+
+    var imgEl = document.createElement("img");  
     imgEl.setAttribute("src", "./Assets/spagett.PNG");
-    quesBlock.appendChild(imgEl);
-  
+    imgEl.setAttribute("class", "img-fluid");
+    quesBlock.appendChild(imgEl);  
   }
 
 
