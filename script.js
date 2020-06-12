@@ -117,7 +117,7 @@ function startGame() {
 var timeEl = document.querySelector("timeDisplay");
 
 function setTime() {
-    secondsLeft = 5;
+    secondsLeft = 210;
     var timerInterval = setInterval(function() {
         secondsLeft--;
         timeDisplay.textContent = secondsLeft + " seconds remaining.";
