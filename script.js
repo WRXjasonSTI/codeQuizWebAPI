@@ -164,8 +164,10 @@ fourthOption.addEventListener('click', answer4Check);
 function answer1Check() {
     if (questions[iHateCoding].answers[0].correct) {
         console.log("test correct1")
+        userScore++;
       } else {
         console.log("test wrong1")
+        secondsLeft - 10;
       }
     fillQuestion();
 }
@@ -173,8 +175,10 @@ function answer1Check() {
 function answer2Check() {
     if (questions[iHateCoding].answers[1].correct) {
         console.log("test correct2")
+        userScore++;
       } else {
         console.log("test wrong2")
+        secondsLeft - 10;
       }
     fillQuestion();
 }
@@ -182,8 +186,10 @@ function answer2Check() {
 function answer3Check() {
     if (questions[iHateCoding].answers[2].correct) {
         console.log("test correct3")
+        userScore++;
       } else {
         console.log("test wrong3")
+        secondsLeft - 10;
       }
     fillQuestion();
 }
@@ -191,8 +197,10 @@ function answer3Check() {
 function answer4Check() {
     if (questions[iHateCoding].answers[3].correct) {
         console.log("test correct4")
+        userScore++;
       } else {
         console.log("test wrong4")
+        secondsLeft - 10;
       }
     fillQuestion();
 }
